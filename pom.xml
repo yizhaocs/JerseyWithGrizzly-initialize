@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.fuhu</groupId>
-    <artifactId>jerseyGrizzly</artifactId>
+    <artifactId>JerseyWithGrizzly-initialize</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>jerseyGrizzly</name>
@@ -22,6 +22,7 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--This allows us to instantiate the grizzly http server in our main class-->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
@@ -63,6 +64,7 @@
                         </goals>
                     </execution>
                 </executions>
+                <!--This invokes the main class when we run the application-->
                 <configuration>
                     <mainClass>com.fuhu.Main</mainClass>
                 </configuration>
@@ -71,6 +73,7 @@
     </build>
 
     <properties>
+        <!--Jersey Version-->
         <jersey.version>2.13</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
